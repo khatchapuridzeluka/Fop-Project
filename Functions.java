@@ -30,39 +30,16 @@ public class Functions implements Functionable{
 
 	@Override
 	public int calculate(char operand, String s, int sum, HashMap<String, Integer> map) {
-		if(operand == '+') {
-			if(Character.isDigit(s.charAt(0))) {
-				sum+=Integer.parseInt(s);
-			}else {
-				sum+=map.get(s);
-			}
-		}
-		if(operand == '-') 
-			if(Character.isDigit(s.charAt(0))) {
-				sum-=Integer.parseInt(s);
-			}else {
-				sum-=map.get(s);
-			}
-		
-		if(operand =='/')
-			if(Character.isDigit(s.charAt(0))) {
-				sum/=Integer.parseInt(s);
-			}else {
-				sum/=map.get(s);
-			}
-		
-		if(operand =='*')
-			if(Character.isDigit(s.charAt(0))) {
-				sum*=Integer.parseInt(s);
-			}else {
-				sum*=map.get(s);
-			}
-		if(operand =='%')
-			if(Character.isDigit(s.charAt(0))) {
-				sum%=Integer.parseInt(s);
-			}else {
-				sum%=map.get(s);
-			}
-		return sum;
+	    int value = Character.isDigit(s.charAt(0)) ? Integer.parseInt(s) : map.get(s);
+
+	    switch (operand) {
+	        case '+' -> sum += value;
+	        case '-' -> sum -= value;
+	        case '/' -> sum /= value;
+	        case '*' -> sum *= value;
+	        case '%' -> sum %= value;
+	        default -> throw new IllegalArgumentException("Unsupported operand: " + operand);
+	    }
+	    return sum;
 	}
 }
