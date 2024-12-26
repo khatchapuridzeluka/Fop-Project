@@ -38,6 +38,10 @@ public class Interpreter {
             if (code[i].charAt(0) == '=') {
                functions.variableAssignment(code, i, false,operations,map);
             }
+            // HANDLING IF
+            if(code[i].equals(Keys.IF.name().toLowerCase())) {
+            	System.out.println("IF STATEMENT WILL BE ADDED HERE");
+            }
 
             // Printing variables
             if (code[i].startsWith(Keys.print.name())) {
