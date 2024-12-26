@@ -33,7 +33,6 @@ public class Functions implements Functionable{
 	        case '/' -> sum /= value;
 	        case '*' -> sum *= value;
 	        case '%' -> sum %= value;
-	        default -> throw new IllegalArgumentException("Unsupported operand: " + operand);
 	    }
 	    return sum;
 	}
