@@ -49,9 +49,6 @@ public class Interpreter {
 				functions.setValue(code[index],sum, map);
 				i = i-1;
 			}
-			
-			/*Character.isDigit(code[i+3].charAt(0)) 
-					&& !operations.contains(code[i+4].charAt(0))*/
 			// needs to be repaired ( ugly code ) 
 			// printing the variable
 			if(code[i].startsWith(Keys.print.name())) {
