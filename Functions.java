@@ -1,19 +1,14 @@
 package interpreter;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class Functions implements Functionable{
 
 	@Override
 	// initializing variables
 	public void setValue(String variable, int value, HashMap<String, Integer> map) {
-		if(!map.containsKey(variable)) {
-			map.put(variable, value);
-		}
-		else {
-			System.err.println("The variable already exists");
-			return;
-		}
+		map.put(variable, value);
 	}
 	
 	@Override
@@ -42,4 +37,28 @@ public class Functions implements Functionable{
 	    }
 	    return sum;
 	}
+
+	@Override
+	public void variableAssignment(String[] code, int i, boolean isVarDeclaration,Set<Character> operations, HashMap<String,Integer> map) {
+	    // Determine the variable name based on the context
+	    String variable = isVarDeclaration ? code[++i] : code[--i];
+
+	    // Initialize the sum
+	    int sum = Character.isDigit(code[i + 2].charAt(0))
+	            ? Integer.parseInt(code[i + 2])
+	            : map.get(code[i + 2]);
+	    i += 3;
+
+	    // Process operations
+	    while (operations.contains(code[i].charAt(0))) {
+	        sum = this.calculate(code[i].charAt(0), code[++i], sum, map);
+	        i++;
+	    }
+
+	    // Set the variable value in the map
+	   this.setValue(variable, sum, map);
+	    i--;
+	}
+
+
 }
