@@ -29,21 +29,14 @@ public class Interpreter {
     // Compiling and executing the code
     private void compile(String[] code) {
         for (int i = 0; i < code.length; i++) {
-            // Initializing variables
+            // Handle variable declaration (var keyword)
             if (code[i].equals(Keys.var.name())) {
-                String variable = code[++i];
-                int sum = Character.isDigit(code[i + 2].charAt(0))
-                        ? Integer.parseInt(code[i + 2])
-                        : map.get(code[i + 2]);
-                i += 3;
+                functions.variableAssignment(code, i, true, operations, map);
+            }
 
-                // Process operations
-                while (operations.contains(code[i].charAt(0))) {
-                    sum = functions.calculate(code[i].charAt(0), code[++i], sum, map);
-                    i++;
-                }
-                functions.setValue(variable, sum, map);
-                i--;
+            // Handle variable reassignment (= symbol)
+            if (code[i].charAt(0) == '=') {
+               functions.variableAssignment(code, i, false,operations,map);
             }
 
             // Printing variables
@@ -53,4 +46,7 @@ public class Interpreter {
             }
         }
     }
+    
+
+
 }
