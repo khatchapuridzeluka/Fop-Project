@@ -1,0 +1,7 @@
+print("Hello World!")
+var a = 30
+var b = 3
+if( a % b == 0 ) {
+print("a is divisible by 3 ")
+}
+print(b)
