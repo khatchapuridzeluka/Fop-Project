@@ -31,7 +31,7 @@ public class Interpreter {
     private void compile(String[] code) {
         for (int i = 0; i < code.length; i++) {
             // Handle variable declaration (var keyword)
-            if (code[i].equals(Keys.var.name())) {
+            if (code[i].equals(Keys.VAR.toString())) {
                 functions.variableAssignment(code, i, true, operations, map);
             }
 
@@ -42,7 +42,7 @@ public class Interpreter {
             
             
             // HANDLE IF STATEMENT
-            if(code[i].startsWith(Keys.IF.name().toLowerCase())) {
+            if(code[i].startsWith(Keys.IF.toString())) {
 
             	int sum = Character.isDigit(code[++i].charAt(0)) 
             			? Integer.parseInt(code[i]) 
@@ -77,7 +77,7 @@ public class Interpreter {
             }
             
             // Printing variables
-            if (code[i].startsWith(Keys.print.name())) {
+            if (code[i].startsWith(Keys.PRINT.toString())) {
             	if(code[i].charAt(6) !='"') {
             		functions.print(code[i].substring(6,code[i].length()-1), map, true);
             	}else {
