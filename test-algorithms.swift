@@ -80,14 +80,20 @@ if( c != b ) {
 
 7. Find the Largest Digit in a Number
 var number = 3947
+
 var maxDigit = 0
+
+var digit = 0
+
+
 while number != 0 {
-    let digit = number % 10
-    if digit > maxDigit {
-        maxDigit = digit
-    }
-    number /= 10
+	digit = number % 10
+	if( digit > maxDigit ) {
+		maxDigit = digit
+	}
+	number = number / 10
 }
+
 print(maxDigit) // Output: 9
 
 8. Sum of Digits
