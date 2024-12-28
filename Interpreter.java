@@ -63,7 +63,14 @@ public class Interpreter {
             }
             
             
+            // HANDLING ++ AND -- ( without space: x++)
+            if(code[i].length() > 2) {
+            	functions.handleIncDec(code[i]);
+            }
+            
+
             // if we are in while loop, we have to jump back!
+            
             boolean isWhile = functions.getIsWhile();
             if(isWhile) {
             	i = functions.handleIsWhile(code, i);
