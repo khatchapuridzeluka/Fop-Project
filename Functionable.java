@@ -21,4 +21,6 @@ public interface Functionable {
 	int handleWhile(String[] code, int i);
 	
 	int handleIsWhile(String[] code, int i);
+	
+	void handleIncDec(String string);
 }
