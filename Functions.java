@@ -198,6 +198,19 @@ public class Functions implements Functionable{
     	}
 		return i;
 	}
+
+	@Override
+	public void handleIncDec(String string) {
+        String varName = string.substring(0, string.length() - 2);
+		int length = string.length();
+		if(string.charAt(length-1) == Keys.PLUSPLUS.toString().charAt(0) 
+				&& string.charAt(length-2) == Keys.PLUSPLUS.toString().charAt(0)) 
+            map.put(varName, map.getOrDefault(varName, 0) + 1);
+
+		if(string.charAt(length-1) == Keys.MINUSMINUS.toString().charAt(0)
+				&& string.charAt(length-2) == Keys.MINUSMINUS.toString().charAt(0)) 
+            map.put(varName, map.getOrDefault(varName, 0)  -1);
+	}
 	
 }
 
