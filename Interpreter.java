@@ -35,7 +35,7 @@ public class Interpreter {
                 functions.variableAssignment(code, i, true, operations, map);
             }
 
-            // Handle variable reassignment (= symbol)
+            // Handle variable reasignment (= symbol)
             if (code[i].charAt(0) == '=') {
                functions.variableAssignment(code, i, false,operations,map);
             }
