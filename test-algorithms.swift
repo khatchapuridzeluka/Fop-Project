@@ -153,8 +153,8 @@ while count < N {
 print(second)    // 1 1 2 3 5 8 13 21 34
 
 
-//on output we need 
-// 1. Sum of First N Numbers
+/* on output we need 
+ 1. Sum of First N Numbers
 int N = 10;
 int sum = 0;
 while (N > 0) {
@@ -270,3 +270,4 @@ while (count < N) {
     count = count + 1;
 }
 System.out.println(second); // Output: 34 (10th Fibonacci number)
+*/
