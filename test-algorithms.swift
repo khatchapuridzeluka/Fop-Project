@@ -43,19 +43,23 @@ print(reversed) // output 4321
 
 
 5. Check if a Number is Prime
-var N = 13
-var isPrime = true
-if N < 2 {
-    isPrime = false
-} else {
-    for i in 2..<N {
-        if N % i == 0 {
-            isPrime = false
-            break
-        }
-    }
+var N = 30
+var isPrime = 0
+var counter = 2
+while counter < N {
+	if( N % counter == 0 ) {
+		isPrime = isPrime + 1
+	}
+	counter = counter + 1
 }
-print(isPrime) // Output: true
+
+if( isPrime > 0 ) {
+	print("This number is not prime")
+}
+
+if( isPrime = 0 ) {
+	print("This number is prime")
+}
 
 6.  Check if a Number is Palindrome
 var a = 1221
