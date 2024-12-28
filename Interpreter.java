@@ -61,7 +61,12 @@ public class Interpreter {
             if(code[i].equals(Keys.WHILE.toString())) {
             	i = functions.handleWhile(code, i);
             }
-            
+
+            // if we are in while loop, we have to jump back!
+            boolean isWhile = functions.getIsWhile();
+            if(isWhile) {
+            	i = functions.handleIsWhile(code, i);
+            }
             
             // HANDLING ++ AND -- ( without space: x++)
             if(code[i].length() > 2) {
@@ -69,12 +74,8 @@ public class Interpreter {
             }
             
 
-            // if we are in while loop, we have to jump back!
             
-            boolean isWhile = functions.getIsWhile();
-            if(isWhile) {
-            	i = functions.handleIsWhile(code, i);
-            }
+
         }
     }
 }
