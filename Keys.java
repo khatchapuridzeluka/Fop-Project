@@ -50,6 +50,6 @@ public enum Keys {
 		}
 	};
 	
-	
+	// returning the correct form in swift language
 	public abstract String toString();
 }
