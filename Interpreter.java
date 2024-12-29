@@ -21,18 +21,17 @@ public class Interpreter {
     public void readSwift() {
         try {
             String content = Files.readString(Paths.get(url));
-            compile(content.split("\\s+"));
+            interpret(content.split("\\s+"));
         } catch (IOException e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
     }
 
     // Compiling and executing the code
-    private void compile(String[] code) {
+    private void interpret(String[] code) {
         for (int i = 0; i < code.length; i++) {
         	
-            // Handle variable declaration (var keyword)
-        	
+            // Handle variable declaration (var keyword)	
             if (code[i].equals(Keys.VAR.toString())) {
                 functions.variableAssignment(code, i, true, operations);
             }
@@ -43,20 +42,22 @@ public class Interpreter {
                functions.variableAssignment(code, i, false,operations);
             }
             
-            
-            // HANDLE IF STATEMENT
-            
-            if(code[i].startsWith(Keys.IF.toString())) {
-            	i = functions.handleIf(code, i, statements);
-            }
-
-
             // Printing variables
-            
             if (code[i].startsWith(Keys.PRINT.toString())) {
             	i = functions.handlePrint(code, i);
             }
             
+            
+            // HANDLE IF STATEMENT
+            if(code[i].startsWith(Keys.IF.toString())) {
+            	i = functions.handleIf(code, i, statements);
+            }
+
+            // handling else statement
+            if(code[i].toString().startsWith("else") || code[i].startsWith("}else")) {
+            	i = functions.handleELSE(code, i);
+            }
+
             // WHILE
             if(code[i].equals(Keys.WHILE.toString())) {
             	i = functions.handleWhile(code, i);
@@ -70,15 +71,11 @@ public class Interpreter {
             
 
             // if we are in while loop, we have to jump back!
-            
             boolean isWhile = functions.getIsWhile();
             if(isWhile) {
             	i = functions.handleIsWhile(code, i);
             }
             
-            if(code[i].toString().startsWith("else") || code[i].startsWith("}else")) {
-            	i = functions.handleELSE(code, i);
-            }
         }
     }
 }
