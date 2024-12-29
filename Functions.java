@@ -1,5 +1,6 @@
 package interpreter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -40,6 +41,7 @@ public class Functions implements Functionable{
 		}
 	}
 	
+	// handlePrint is the one calling print method. it is choosing between variable and text
 	@Override
 	public int handlePrint(String[] code, int i) {
 		if(code[i].charAt(6) !='"') {
@@ -64,6 +66,7 @@ public class Functions implements Functionable{
 		return i;
 	}
 
+	
 	@Override
 	public int calculate(char operand, String s, int sum) {
 	    int value = this.getSumValue(s, map);
@@ -85,8 +88,11 @@ public class Functions implements Functionable{
 
 	    // Initialize the sum
 	    int sum = this.getSumValue(code[i+2], map);
-	    i += 3;
-
+	    
+	    if(i < code.length -4) {
+	    	i += 3;
+	    }
+	    
 	    // Process operations
 	    while (operations.contains(code[i].charAt(0))) {
 	        sum = this.calculate(code[i].charAt(0), code[++i], sum);
@@ -117,32 +123,72 @@ public class Functions implements Functionable{
 	}
 
 	@Override
+	//if(a>b) 
 	public int handleIf(String[] code, int i, Set<Character> statements) {
-		int sum = this.getSumValue(code[++i], map);
-    	
-    	while(!statements.contains(code[i+1].charAt(0))) {
-    		sum=this.calculate(code[i+1].charAt(0), code[i+2], sum);
-    		i+=2;
-    	}
-    	i++;
-    	
-    	char state = code[i].charAt(0);
-    	
-    	int otherSum = this.getSumValue(code[++i], map);
-    	while(code[i+1].charAt(0) != ')') {
-    		otherSum=this.calculate(code[i+1].charAt(0), code[i+2], otherSum);
-    		i+=2;
-    	}
-    	
-    	
-    	if(this.isTrue(sum, otherSum, state)) {
-    		i=i+2;
-    	}else {
-    		while(code[i].charAt(0) !='}') {
-    			i++;
-    		}
-    	}
-		return i;
+		ArrayList<String> list = new ArrayList<>();
+		StringBuilder string = new StringBuilder();
+
+		// Process the input into tokens
+		while (code[i].charAt(code[i].length() - 1) != ')' && code[i].charAt(code[i].length() - 1) != '{') {
+		    if (!code[i].trim().isEmpty()) {
+		        list.add(code[i]);
+		        list.add(" ");
+		    }
+		    i++;
+		}
+
+		// Handle the last token
+		if (code[i].charAt(0) != ')') {
+		    if (code[i].charAt(code[i].length() - 1) == '{') {
+		        list.add(code[i].substring(0, code[i].length() - 2));
+		    } else {
+		        list.add(code[i].substring(0, code[i].length() - 1));
+		    }
+		}
+
+		// Adjust the first token
+		if (list.get(0).length() != 3) {
+		    list.set(0, list.get(0).substring(3));
+		} else {
+		    list.remove(0);
+		}
+
+		// Build the string and split into array
+		for (String st : list) {
+		    string.append(st);
+		}
+		String[] arr = string.toString().split(" ");
+
+		// Initialize counters and sums
+		int cnt = arr[0].isEmpty() ? 1 : 0;
+		int sum = this.getSumValue(arr[cnt], map);
+
+		// Calculate the first sum
+		while (!statements.contains(arr[cnt + 1].charAt(0))) {
+		    sum = this.calculate(arr[cnt + 1].charAt(0), arr[cnt + 2], sum);
+		    cnt += 2;
+		}
+
+		// Process the operator and the second sum
+		char op = arr[cnt + 1].charAt(0);
+		cnt += 2;
+		int otherSum = this.getSumValue(arr[cnt], map);
+
+		while (cnt < arr.length - 1) {
+		    otherSum = this.calculate(arr[cnt + 1].charAt(0), arr[cnt + 2], otherSum);
+		    cnt += 2;
+		}
+
+		// Evaluate the condition
+		if (this.isTrue(sum, otherSum, op)) {
+		    return i;
+		} else {
+		    while (code[i].charAt(0) != '}') {
+		        i++;
+		    }
+		    return i;
+		}
+
 	}
 
 	@Override
@@ -213,9 +259,3 @@ public class Functions implements Functionable{
 	}
 	
 }
-
-
-
-
-
-
