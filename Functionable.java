@@ -2,6 +2,7 @@ package interpreter;
 
 import java.util.Set;
 
+// functionable interface is like a menu for the methods that are being used in interpreter.java interpret method
 public interface Functionable {
 	
 	// setting the value to the variable 
