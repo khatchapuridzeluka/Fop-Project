@@ -1,5 +1,6 @@
 package interpreter;
 
+// exception for using undeclared variables
 public class VariableNotDeclaredException extends Exception{
 	private final String variable;
 	
