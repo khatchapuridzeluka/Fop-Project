@@ -1,5 +1,6 @@
 package interpreter;
 
+//exception for already existed variable declaration
 public class DuplicateFieldException extends Exception{
 	private final String variable;
 	
