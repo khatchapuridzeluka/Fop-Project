@@ -1,5 +1,6 @@
 package interpreter;
 
+//exception for invalid variable name ( var 15 = 30 )
 public class InvalidVariableNameException extends Exception{
 	private final String variable;
 	
