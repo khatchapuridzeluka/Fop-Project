@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+// the main methods for Interpret.java
 public class Functions implements Functionable{
 	private boolean isWhile = false;
 	private boolean isIf = false;
