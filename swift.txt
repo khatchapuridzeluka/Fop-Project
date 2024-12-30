@@ -1,7 +1,167 @@
-print("Hello World!")
-var a = 30
-var b = 3
-if( a % b == 0 ) {
-print("a is divisible by 3 ")
+print("1. SUM OF FIRST N NUMBERS: ")
+var N0 = 11
+var sum = 0
+var k = 0
+while k < N0 {
+	sum = sum + k
+	k++
 }
-print(b)
+
+print(sum) // output 55
+
+print("2. FACTORIAL OF N: ")
+var N1 = 5
+var mul = 1
+while N1 > 0 {
+	mul = mul * N1
+	N1--
+}
+
+print(mul) // 120
+
+
+
+print("3. GCD OF TWO NUMBERS: ")
+var a = 48
+var b = 18
+while b != 0 {
+    var temp = b
+    b = a % b
+    a = temp
+}
+print(a) // Output: 6
+
+
+
+print("4. Reverse a Number: ")
+var number = 1234
+var reversed = 0
+var temp = 0
+while number != 0 {
+	reversed = reversed * 10
+	temp = number % 10
+	reversed = reversed + temp
+	number = number / 10
+}
+print(reversed) // output 4321
+
+
+
+print("5. Check If a Number is Prime: ")
+var N2 = 13
+var isPrime = 0
+var counter = 2
+while counter < N2 {
+	if( N2 % counter == 0 ) {
+		isPrime++
+	}
+	counter++
+}
+
+
+if( isPrime > 0 ) {
+	print("This number is not prime")
+}
+
+if( isPrime = 0 ) {
+	print("This number is prime")
+}else{
+	print("This number is not prime")
+	}
+
+
+
+print("6. Check If a Number is Palindrome: ")
+var a1 = 1221
+var c = a1
+var b1 = 0
+var temp1 = 0
+
+while a1 != 0 {
+	b1 = b1 * 10
+	temp1 = a1 % 10
+	b1 = b1 + temp1
+	a1 = a1 / 10
+}
+
+
+if( c == b1 ) {
+	print("it is a palindrome")
+}else{
+print("it is not a palindrome")
+}
+
+print("7. Find the Largest Digit in a Number: ")
+var number1 = 3947912
+
+var maxDigit = 0
+
+var digit = 0
+
+
+while number1 != 0 {
+	digit = number1 % 10
+	if( digit > maxDigit ) {
+		maxDigit = digit
+	}
+	number1 = number1 / 10
+}
+print(maxDigit) // Output: 9
+
+
+
+print("8. Sum of Digits: ")
+var number2 = 1234
+var sum1 = 0
+var temp2 = 0
+while number2 != 0 {
+	temp2 = number2 % 10
+	sum1 = sum1 + temp2
+	number2 = number2 / 10
+}
+
+print(sum1) // Output: 10
+
+print("9. Multiplication Table: ")
+
+var N3 = 5
+var k1 = 1
+var result = 1
+
+while k1 < 11 {
+	result = k1 * N3
+	print(result)
+	k1++
+}
+// Output:
+// 5
+// 10
+// 15
+// 20
+// 25
+// 30
+// 35
+// 40
+// 45
+// 50
+
+print(" 10. Nth Fibonacci Number: ")
+
+
+var first = 0
+var second = 1
+var count = 1
+
+var N = 10
+
+var next = 0
+
+while count < N {
+ 	next = first + second
+ 	first = second
+ 	second = next
+ 	count++
+}
+
+print(second)    // 1 1 2 3 5 8 13 21 34
+

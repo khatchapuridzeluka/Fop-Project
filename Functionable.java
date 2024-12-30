@@ -1,17 +1,40 @@
 package interpreter;
 
-import java.util.HashMap;
 import java.util.Set;
 
 public interface Functionable {
 	
-	void setValue(String variable, int value, HashMap<String,Integer> map);
+	// setting the value to the variable 
+	void setValue(String variable, int value) ;
 	
-	void print(String name, HashMap<String,Integer> map, boolean isVar);
+	// assigning the variable
+	void variableAssignment(String[] code, int i, boolean isVarDeclaration, Set<Character> operations) throws DuplicateFieldException, VariableNotDeclaredException, InvalidVariableNameException;
+
+	// handling ++ and --
+	void handleIncDec(String string);
 	
-	int calculate(char operand, String s, int sum, HashMap<String,Integer> map);
+	// printing the variable or just text
+	void print(String name, boolean isVar) throws VariableNotDeclaredException;
 	
-	void variableAssignment(String[] code, int i, boolean isVarDeclaration, Set<Character> operations, HashMap<String,Integer> map);
+	// handling print function
+	int handlePrint(String[] code, int i) throws VariableNotDeclaredException;
 	
+	// calculating arithmetic operations
+	int calculate(char operand, String s, int sum);
+	
+	// checks if the condition is true
 	boolean isTrue(int sum, int otherSum, char statement);
+	
+	// handling if statement
+	int handleIf(String[] code, int i, Set<Character> statements);
+
+	// handling else statment
+	int handleELSE(String[] code, int i);
+	
+	// handling while loop
+	int handleWhile(String[] code, int i);
+	
+	// checks if there is while going on
+	int handleIsWhile(String[] code, int i);
+	
 }

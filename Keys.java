@@ -27,9 +27,29 @@ public enum Keys {
 		public String toString() {
 			return "while";
 		}
+	},
+	
+	PLUSPLUS {
+		@Override
+		public String toString() {
+			return "++";
+		}
+	},
+	
+	MINUSMINUS {
+		@Override
+		public String toString() {
+			return "--";
+		}
+	},
+	
+	ELSE {
+		@Override
+		public String toString() {
+			return "else";
+		}
 	};
 	
-	
-	
+	// returning the form in swift language
 	public abstract String toString();
 }

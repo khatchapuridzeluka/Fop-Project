@@ -1,7 +1,7 @@
 package interpreter;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DuplicateFieldException, VariableNotDeclaredException,InvalidVariableNameException{
     	//Reading the swift code from the specific .txt file
     	new Interpreter("src/interpreter/swift.txt").readSwift();
     }
