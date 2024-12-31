@@ -62,7 +62,6 @@ Supports basic Swift syntax:
    Clone or download the repository.
    ```bash
    git clone https://github.com/khatchapuridzeluka/Fop-Project
-   cd SWIFT-TO-JAVA-Interpreter
    ```
 2. **Write Swift Algorithm in swift.txt file**
    ```bash
