@@ -36,22 +36,24 @@ Supports basic Swift syntax:
    }  
   ```
 ### **Error Handling**
-- `InvalidVariableNameException`:  
-  <span style="color: red;">Error: Variable names must start with a letter.</span>
-  Example:
-  ```swift
-  var 15 = 30
+- `InvalidVariableNameException`:
+```bash
+   var 15 = 30
+   // Triggered if the variable's name does not start with a letter
+```
   
 
-- `VariableNotDeclaredException`: Triggered if attempting to use an undeclared variable.
+- `VariableNotDeclaredException`: 
 ```bash
    var a = 30
    print(b)
+  // Triggered if attempting to use an undeclared variable.
 ```
-- `DuplicateFieldException`: Triggered if creating a variable that already exists.
+- `DuplicateFieldException`:
 ```bash
    var a = 30
    var a = 50
+  // Triggered if creating a variable that already exists.
 ```
 
 > Includes **10 pre-written testing algorithms** in `swift.txt` for demonstration purposes.
