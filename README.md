@@ -37,9 +37,12 @@ Supports basic Swift syntax:
   ```
 ### **Error Handling**
 - `InvalidVariableNameException`:  
- ```bash
-    var 15 = 30
- ```
+  <span style="color: red;">Error: Variable names must start with a letter.</span>
+  Example:
+  ```swift
+  var 15 = 30
+  
+
 - `VariableNotDeclaredException`: Triggered if attempting to use an undeclared variable.
 ```bash
    var a = 30
