@@ -22,7 +22,7 @@ public class Functions implements Functionable{
 	}
 	
 	@Override
-	// initializing variables
+	// Initializing variables
 	public void setValue(String variable, int value) {
 		map.put(variable, value);
 	}
@@ -126,7 +126,7 @@ public class Functions implements Functionable{
 
 	
 	@Override
-	// getting the result with operation and 2 numbers
+	// Getting the result with operation and 2 numbers
 	public int calculate(char operand, String s, int sum) {
 	    int value = this.getSumValue(s, map);
 
