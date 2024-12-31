@@ -30,9 +30,6 @@ public class Interpreter {
     private void interpret(String[] code) throws DuplicateFieldException, VariableNotDeclaredException, InvalidVariableNameException{
         for (int i = 0; i < code.length; i++) {
         	// if the code is nonsense
-        	if(code.length <3)
-        		return;
-        	
             // Handle variables declaration (var keyword)	
             if (code[i].equals(Keys.VAR.toString())) {
                 functions.variableAssignment(code, i, true, operations);
