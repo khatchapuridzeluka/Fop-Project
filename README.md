@@ -8,6 +8,8 @@ Luka Khatchapuridze - Handles while loops and exceptions.
 Andria Tsilosani - Handles if/else statements.
 Zurab Antadze - Handles variable initialization.
 Nikoloz Sikhashvili - Handles printing and calculations with variables.
+
+###
 Features
 Supports basic Swift syntax:
 
@@ -17,11 +19,13 @@ Conditional statements: if, else.
 Loops: while loops.
 Error Handling:
 
+####
 InvalidVariableNameException: Triggered if the variable name does not start with an alphabet.
 VariableNotDeclaredException: Triggered if attempting to use an undeclared variable.
 DuplicateFieldException: Triggered if creating a variable that already exists.
 Includes 10 pre-written testing algorithms in swift.txt for demonstration purposes.
 
+#####
 Setup and Usage
 Download the Project: Clone or download the repository.
 
