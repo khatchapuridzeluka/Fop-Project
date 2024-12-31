@@ -11,10 +11,10 @@ The interpreter handles various aspects of Swift syntax and provides feedback on
 
 ### **Features**
 Supports basic Swift syntax:
-- **Variable Initialization and Manipulation**: `var a = 30` / `a = a + 30`.
-- **Printing**: `print(a)` (variable) or `print("Hello World")`.
+- **Variable Initialization and Manipulation**: `var a = 30` / `a = a + 30` > Needs spaces.
+- **Printing**: `print(a)` (variable) or `print("Hello World")`. > Does not need additional spaces inside
 - **Conditional Statements**: Supports `if`, `else`.
-- **Loops**: Supports `while` loops.
+- **Loops**: Supports `while` loops.   > while a < b { ... } -> Needs spaces
 
 ### **Error Handling**
 - `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
@@ -31,10 +31,21 @@ Supports basic Swift syntax:
    cd SWIFT-TO-JAVA-Interpreter
 2. **Write Swift Algorithm in swift.txt file**
    ```bash
-   var a = 0
-   var b = 10
-   while a < b {
-      print(a)
-      a++
+   print("5. Check If a Number is Prime: ")
+   var N2 = 13
+   var isPrime = 0
+   var counter = 2
+   while counter < N2 {
+     if( N2 % counter == 0 ) {
+       isPrime++
+     }
+     counter++
    }
+   
+   if(isPrime > 0) {
+     print("this number is not prime")
+   }else{
+     print("this number is prime")
+   }
+
 3. **Run the code**
