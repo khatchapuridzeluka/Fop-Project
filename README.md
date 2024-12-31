@@ -38,8 +38,7 @@ Supports basic Swift syntax:
 ### **Error Handling**
 - `InvalidVariableNameException`:  
  ```bash
-    var a = 30
-    print(b)
+    var 15 = 30
  ```
 - `VariableNotDeclaredException`: Triggered if attempting to use an undeclared variable.
 ```bash
