@@ -37,8 +37,19 @@ Supports basic Swift syntax:
   ```
 ### **Error Handling**
 - `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
+```bash
+   var 15 = 30
+```
 - `VariableNotDeclaredException`: Triggered if attempting to use an undeclared variable.
+```bash
+   var a = 30
+   print(b)
+```
 - `DuplicateFieldException`: Triggered if creating a variable that already exists.
+```bash
+   var a = 30
+   var a = 50
+```
 
 > Includes **10 pre-written testing algorithms** in `swift.txt` for demonstration purposes.
 
