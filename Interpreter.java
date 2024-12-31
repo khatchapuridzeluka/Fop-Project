@@ -29,7 +29,7 @@ public class Interpreter {
     // Compiling and executing the code
     private void interpret(String[] code) throws DuplicateFieldException, VariableNotDeclaredException, InvalidVariableNameException{
         for (int i = 0; i < code.length; i++) {
-        	// if the code is nonsense
+        	// If the code is nonsense
             // Handle variables declaration (var keyword)	
             if (code[i].equals(Keys.VAR.toString())) {
                 functions.variableAssignment(code, i, true, operations);
@@ -51,7 +51,7 @@ public class Interpreter {
             	i = functions.handleIf(code, i, statements);
             }
 
-            // handling else statement
+            // Handling else statement
             if(code[i].toString().startsWith("else") || code[i].startsWith("}else")) {
             	i = functions.handleELSE(code, i);
             }
@@ -68,7 +68,7 @@ public class Interpreter {
             }
             
 
-            // if we are in while loop, we have to jump back!
+            // If we are in while loop, we have to jump back!
             boolean isWhile = functions.getIsWhile();
             if(isWhile) {
             	i = functions.handleIsWhile(code, i);
