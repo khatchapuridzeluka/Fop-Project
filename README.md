@@ -59,6 +59,7 @@ Supports basic Swift syntax:
    ```bash
    git clone https://github.com/khatchapuridzeluka/Fop-Project
    cd SWIFT-TO-JAVA-Interpreter
+   ```
 2. **Write Swift Algorithm in swift.txt file**
    ```bash
    print("5. Check If a Number is Prime: ")
@@ -77,5 +78,5 @@ Supports basic Swift syntax:
    }else{
      print("this number is prime")
    }
-
+   ```
 3. **Run the code**
