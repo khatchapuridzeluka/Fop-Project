@@ -29,3 +29,12 @@ Supports basic Swift syntax:
    ```bash
    git clone https://github.com/khatchapuridzeluka/Fop-Project
    cd SWIFT-TO-JAVA-Interpreter
+2. **Write Swift Algorithm in swift.txt file**
+   ```bash
+   **swift.txt**
+   var a = 0
+   var b = 10
+   while a < b {
+      print(a)
+   a++
+   }
