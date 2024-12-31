@@ -28,8 +28,8 @@ Supports basic Swift syntax:
    print("The number is odd")
   }
 ```
-- **Loops**: Supports `while` loops.   > while a < b { ... } -> Needs spaces
-  ```bash
+- **Loops**: Supports `while` loops. -> Needs spaces
+```bash
    while a < b {
      print(a)
      a++
