@@ -11,10 +11,10 @@ The interpreter handles various aspects of Swift syntax and provides feedback on
 
 ### **Features**
 Supports basic Swift syntax:
-- **Variable Initialization and Manipulation**: `var a = 30` / `a = a + 30` -> Needs spaces.
-- **Printing**: `print(a)` (variable) or `print("Hello World")`. -> Does not need additional spaces inside
+- **Variable Initialization and Manipulation**: `var a = 30` / `a = a + 30` > Needs spaces.
+- **Printing**: `print(a)` (variable) or `print("Hello World")`. > Does not need additional spaces inside
 - **Conditional Statements**: Supports `if`, `else`.
-- **Loops**: Supports `while` loops.   -> while a < b { ...
+- **Loops**: Supports `while` loops.   > while a < b { ... } -> Needs spaces
 
 ### **Error Handling**
 - `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
