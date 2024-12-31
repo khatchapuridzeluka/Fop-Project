@@ -50,6 +50,6 @@ public enum Keys {
 		}
 	};
 	
-	// returning the form in swift language
+	// Returning the form in swift language
 	public abstract String toString();
 }
