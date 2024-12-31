@@ -36,16 +36,16 @@ Supports basic Swift syntax:
    var isPrime = 0
    var counter = 2
    while counter < N2 {
-   	if( N2 % counter == 0 ) {
-   		isPrime++
-   	}
-   	counter++
+     if( N2 % counter == 0 ) {
+       isPrime++
+     }
+     counter++
    }
    
    if(isPrime > 0) {
-   	print("this number is not prime")
+     print("this number is not prime")
    }else{
-   	print("this number is prime")
-   	}
+     print("this number is prime")
+   }
 
 3. **Run the code**
