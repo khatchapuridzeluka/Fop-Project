@@ -56,9 +56,8 @@ Supports basic Swift syntax:
   // Triggered if creating a variable that already exists.
 ```
 
-> Includes **10 pre-written testing algorithms** in `swift.txt` for demonstration purposes.
-
 #### **Setup and Usage**
+> Includes **10 pre-written testing algorithms** in `swift.txt` for demonstration purposes.
 1. **Download the Project**:  
    Clone or download the repository.
    ```bash
