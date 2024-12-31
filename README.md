@@ -34,6 +34,8 @@ Supports basic Swift syntax:
      print(a)
      a++
    }
+  
+  ```
 
 ### **Error Handling**
 - `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
