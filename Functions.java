@@ -6,13 +6,13 @@ import java.util.Set;
 public class Functions implements Functionable{
 
 	@Override
-	// initializing variables
+	// Initializing variables 
 	public void setValue(String variable, int value, HashMap<String, Integer> map) {
 		map.put(variable, value);
 	}
 	
 	@Override
-	// printing variables
+	// Printing variables
 	public void print(String name, HashMap<String,Integer> map, boolean isVar) {
 		if(isVar) {
 			if(!map.containsKey(name)) {
