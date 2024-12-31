@@ -22,10 +22,10 @@ Supports basic Swift syntax:
 ```
 - **Conditional Statements**: Supports `if`, `else`.
 ```bash
-  if(a % 2 ==0) {
-    print("The number is even")
-  }else{
-    print("The number is odd")
+ if(a % 2 ==0) {
+   print("The number is even")
+ }else{
+   print("The number is odd")
   }
 ```
 - **Loops**: Supports `while` loops.   > while a < b { ... } -> Needs spaces
