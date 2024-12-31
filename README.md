@@ -14,7 +14,7 @@ Supports basic Swift syntax:
 - **Variable Initialization and Manipulation**: `var a = 30` / `a = a + 30` > Needs spaces.
  ```bash
   var a = 30
-  var b = a * 30
+  var b = a + 30
 ```
 - **Printing**: `print(a)` (variable) or `print("Hello World")`. > Does not need additional spaces inside
 ```bash
