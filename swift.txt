@@ -58,17 +58,11 @@ while counter < N2 {
 	counter++
 }
 
-
-if( isPrime > 0 ) {
-	print("This number is not prime")
-}
-
-if( isPrime = 0 ) {
-	print("This number is prime")
+if(isPrime > 0) {
+	print("this number is not prime")
 }else{
-	print("This number is not prime")
+	print("this number is prime")
 	}
-
 
 
 print("6. Check If a Number is Palindrome: ")
