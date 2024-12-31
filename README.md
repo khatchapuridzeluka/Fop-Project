@@ -31,10 +31,10 @@ Supports basic Swift syntax:
    cd SWIFT-TO-JAVA-Interpreter
 2. **Write Swift Algorithm in swift.txt file**
    ```bash
-   **swift.txt**
    var a = 0
    var b = 10
    while a < b {
       print(a)
-   a++
+      a++
    }
+3. **Run the code**
