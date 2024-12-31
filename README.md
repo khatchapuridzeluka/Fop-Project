@@ -36,10 +36,12 @@ Supports basic Swift syntax:
    }  
   ```
 ### **Error Handling**
-- `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
-```bash
-   var 15 = 30
-```
+- **`InvalidVariableNameException`**:  
+  Triggered if the variable name does not start with an alphabet.  
+  Example:
+  ```swift
+  var 15 = 30
+  ```
 - `VariableNotDeclaredException`: Triggered if attempting to use an undeclared variable.
 ```bash
    var a = 30
