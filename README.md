@@ -33,10 +33,8 @@ Supports basic Swift syntax:
    while a < b {
      print(a)
      a++
-   }
-  
+   }  
   ```
-
 ### **Error Handling**
 - `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
 - `VariableNotDeclaredException`: Triggered if attempting to use an undeclared variable.
