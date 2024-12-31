@@ -4,10 +4,10 @@ This project interprets Swift code written in a `swift.txt` file and executes it
 The interpreter handles various aspects of Swift syntax and provides feedback on errors or unsupported operations.
 
 ## **Team Members**
-- **Luka Khatchapuridze** - Handles `while` loops and exceptions.
-- **Andria Tsilosani** - Handles `if/else` statements.
-- **Zurab Antadze** - Handles variable initialization.
-- **Nikoloz Sikhashvili** - Handles printing and calculations with variables.
+- **Luka Khatchapuridze** (khatchapuridzeluka) - Handles `while` loops and exceptions.
+- **Andria Tsilosani** (andriatsilosani1)- Handles `if/else` statements.
+- **Zurab Antadze** (johntheripper10) - Handles variable initialization.
+- **Nikoloz Sikhashvili** (N0B0DYYYYY) - Handles printing and calculations with variables.
 
 ### **Features**
 Supports basic Swift syntax:
