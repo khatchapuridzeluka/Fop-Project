@@ -31,10 +31,21 @@ Supports basic Swift syntax:
    cd SWIFT-TO-JAVA-Interpreter
 2. **Write Swift Algorithm in swift.txt file**
    ```bash
-   var a = 0
-   var b = 10
-   while a < b {
-      print(a)
-      a++
+   print("5. Check If a Number is Prime: ")
+   var N2 = 13
+   var isPrime = 0
+   var counter = 2
+   while counter < N2 {
+   	if( N2 % counter == 0 ) {
+   		isPrime++
+   	}
+   	counter++
    }
+   
+   if(isPrime > 0) {
+   	print("this number is not prime")
+   }else{
+   	print("this number is prime")
+   	}
+
 3. **Run the code**
