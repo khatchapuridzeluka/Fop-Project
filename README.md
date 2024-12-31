@@ -30,10 +30,10 @@ Supports basic Swift syntax:
 ```
 - **Loops**: Supports `while` loops.   > while a < b { ... } -> Needs spaces
   ```bash
-  while a < b {
-    print(a)
-    a++
-  }
+   while a < b {
+     print(a)
+     a++
+   }
 
 ### **Error Handling**
 - `InvalidVariableNameException`: Triggered if the variable name does not start with an alphabet.
